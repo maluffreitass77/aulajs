@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício JS 1</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicial</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section>
+        <div class="container">
+            <h1>Exercício JS</h1><button onclick="calcularMedia();">Calcular Média</button>
+        </div>
+
+    </section>
+    <section>
+        <div class="bloco bloco_vermelho" id="bola_vermelha">
+        </div>
+       
+    </section>
+    <footer>
+    
+        <div class="container"> 2024 - Todos os direitos reservados </div>
+
+    </footer>
+
+    <script>
+         let nome = "Maria Luiza";
+        console.log(nome);
+    function calcularMedia() {
+            const nome = prompt("Digite seu nome");
+            const nota1 = parseFloat(prompt("Digite a primeira nota"));
+            const nota2 = parseFloat(prompt("Digite a segunda nota"));
+            const nota3 = parseFloat(prompt("Digite a terceira nota"));
+            const media = (nota1 + nota2 + nota3) / 3;
+            console.log(nome, "sua média é", media.toFixed(2));
+
+            const resultado = document.getElementById("resultado");
+            resultado.innerText = nome + ", sua média é " + media.toFixed(2);
+        }
+        bolas[0].innerText = "Bola Vermelha";
+        const bola_vermelha = document.querySelector(".bloco");
+        bola_vermelha.addEventListener("click", media)
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula JS</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicial</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section>
+        <div class="container">
+            <h1>Aula JS</h1>
+            <button onclick="perguntaIdade();">Clique aqui</button>
+        </div>
+
+    </section>
+    <section>
+        <div class="bloco bloco_vermelho" id="bola_vermelha">
+        </div>
+        <div class="bloco bloco_verde" id="bola_verde">
+        </div>
+        <div class="bloco bloco_azul">
+        </div>
+        <div class="bloco bloco_amarelo">
+        </div>
+    </section>
+    <footer>
+        <div class="container">
+            2024 - Todos os direitos reservados
+        </div>
+    </footer>
+
+    <script>
+        let nome = "Maria Luiza";
+        console.log(nome);
+        let ano = 2024;
+        let anoNascimento = 2008; // SEU ANO DE NASCIMENTO
+        let idade = ano - anoNascimento;
+        console.log(nome, "possui", idade, "anos");
+
+        function perguntaIdade() {
+            const nome = prompt("Digite seu nome");
+            const ano = prompt("Digite o ano atual", new Date().getFullYear());
+            const anoNascimento = prompt("Digite o ano de nascimento");
+            const idade = ano - anoNascimento;
+            console.log(nome, "possui", idade, "anos");
+
+            const bola_vermelha = document.getElementById("bola_vermelha");
+            bola_vermelha.innerText = nome + " possui " + idade + " anos";
+        }
+        function anoFormatura() {
+            const anoAtual = new Date().getFullYear();
+            const anoNascimento = prompt("Digite o ano de nascimento");
+            const idade = anoAtual - anoNascimento;
+            const anoFormatura = anoAtual + 18 - idade;
+
+            console.log("Você irá se formar em", anoFormatura);
+            const bola_verde = document.querySelector(".bloco_verde");
+            bola_verde.innerText = ("Você irá se formar em ") + anoFormatura;
+
+        }
+        const bola_azul = document.querySelector(".bloco");
+        bola_azul.addEventListener("click", anoFormatura)
+
+        const bolas = document.querySelectorAll(".bloco");
+        console.log(bolas);
+        bolas[0].innerText = "Bola Vermelha";
+        bolas[1].innerText = "Bola Verde";
+        bolas[2].innerText = "Bola Azul";
+        bolas[3].innerText = "Bola Amarelo";
+        bolas[3].classList.add("classe_diferentona")
+
+        bolas.forEach(
+            bola => {
+                bola.addEventListener("click", function(e) {
+                    console.log("Clicou na bola", bola.innerText);
+                    e.target.classList.add("ativa");
+                }
+                )
+            }
+        )
+
+    </script>
+
+    </script>
+</body>
+
+</html>
